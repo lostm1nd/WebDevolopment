@@ -18,12 +18,12 @@ public class Crawler {
 	
 	public static void main(String[] args) {
 		
-		String url = "http://softuni.bg/";
-		int levels = 3;
+		String url = "https://softuni.bg/";
+		int levels = 2;
 		
 		try {
 			createFile();
-			crawlPage(url, levels);			
+			crawlPage(url, levels);
 		} catch (IOException e) {
 			System.out.println("Something is wrong. Try again later.");
 			e.printStackTrace();
@@ -47,37 +47,32 @@ public class Crawler {
 			return;
 		}
 		
-		if (pageUrl.endsWith("/")) {
-			pageUrl = pageUrl.substring(0, pageUrl.length() - 1);
-		}
-		
-		Document document = Jsoup.connect(pageUrl).get();
+		Document document = Jsoup.connect(pageUrl).userAgent("Chrome").timeout(3000).get();
 		
 		Elements links = document.getElementsByTag("a");
 			
 		for (Element link : links) {
 			
-			if (link.attr("href").startsWith("/") &&
-					!checkIsLinkVisited(pageUrl + link.attr("href"))) {
+			if (link.attr("abs:href").toLowerCase().endsWith("pdf")) {
 				
-				storeVisitedLinks(pageUrl + link.attr("href"));				
-				crawlPage(pageUrl + link.attr("href"), depth - 1);
+				// skip pdf files
 				
-			} else if (link.attr("href").startsWith("http") &&
-					!checkIsLinkVisited(link.attr("href"))) {
+			} else if (!checkIsLinkVisited(link.attr("abs:href"))) {
 				
-				storeVisitedLinks(link.attr("href"));
-				crawlPage(link.attr("href"), depth - 1);
+				storeVisitedLinks(link.attr("abs:href"));
+				crawlPage(link.attr("abs:href"), depth - 1);
 				
 			} else {
+				
 				// skip empty links like #
+				
 			}
 		}
 	}
 	
 	public static void storeVisitedLinks(String visitedUrl) throws IOException {
 		
-		try (BufferedWriter fileWriter = new BufferedWriter(new FileWriter("crawled-urls.txt", true))) {
+		try (BufferedWriter fileWriter = new BufferedWriter(new FileWriter(OUTPUT_FILE, true))) {
 			fileWriter.write(visitedUrl + System.lineSeparator());
 		}
 	}
@@ -85,7 +80,7 @@ public class Crawler {
 	public static boolean checkIsLinkVisited(String linkUrl) throws IOException {
 		boolean isVisited = false;
 		
-		try (BufferedReader fileReader = new BufferedReader(new FileReader("crawled-urls.txt"))) {
+		try (BufferedReader fileReader = new BufferedReader(new FileReader(OUTPUT_FILE))) {
 			String currentUrl = fileReader.readLine();
 			
 			while (currentUrl != null) {
