@@ -15,9 +15,9 @@ $dark-blue: #435c70;
 	padding: 12px 16px 0 16px;
 	color: $gray;
 	background-color: $background-color;
-	background-image: url('../images/envelope-over.png'), url('../images/envelope-under.png'), url('../images/form-background.png');
-	background-position: center bottom, center bottom, left top;
-	background-repeat: no-repeat, no-repeat, repeat;
+	background-image: url('../images/envelope-under.png'), url('../images/form-background.png');
+	background-position: center bottom, left top;
+	background-repeat: no-repeat, repeat;
 
 	h1 {
 		text-align: center;
@@ -28,9 +28,9 @@ $dark-blue: #435c70;
 
 form {
 	width: 400px;
-	height: 550px;
 	margin: 0 auto;
 	padding-top: 25px;
+	padding-bottom: 160px;
 	color: #7C7873;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
@@ -74,9 +74,11 @@ form {
 	}
 
 	textarea {
+		min-width: 100%;
 		max-width: 100%;
+		min-height: 80px;
 		height: 100px;
-		max-height: 100px;
+		overflow: hidden;
 	}
 
 	input {

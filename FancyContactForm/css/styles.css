@@ -9,9 +9,9 @@
   padding: 12px 16px 0 16px;
   color: #7c7873;
   background-color: #cdc8ba;
-  background-image: url("../images/envelope-over.png"), url("../images/envelope-under.png"), url("../images/form-background.png");
-  background-position: center bottom, center bottom, left top;
-  background-repeat: no-repeat, no-repeat, repeat;
+  background-image: url("../images/envelope-under.png"), url("../images/form-background.png");
+  background-position: center bottom, left top;
+  background-repeat: no-repeat, repeat;
 }
 #form-wrap h1 {
   text-align: center;
@@ -21,9 +21,9 @@
 
 form {
   width: 400px;
-  height: 550px;
   margin: 0 auto;
   padding-top: 25px;
+  padding-bottom: 160px;
   color: #7C7873;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -62,9 +62,11 @@ form textarea:focus, form input:focus {
   background-color: #fcfaf8;
 }
 form textarea {
+  min-width: 100%;
   max-width: 100%;
+  min-height: 80px;
   height: 100px;
-  max-height: 100px;
+  overflow: hidden;
 }
 form input {
   height: 24px;
