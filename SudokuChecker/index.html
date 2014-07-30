@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sudoko Checker</title>
+	<style>
+	#wrapper{
+		width: 500px;
+		height: 500px;
+		margin: 12px auto;
+		text-align: center;
+	}
+	header h1 {
+		margin: 0;
+	}
+	header {
+		margin-bottom: 18px;
+	}
+	table, tbody, tr, td, input {
+		margin: 0;
+		padding: 0;
+	}
+	table {
+		border: 1px solid #000;
+		border-collapse: collapse;
+	}
+	table tr {
+		height: 50px;
+	}
+	table tr:nth-child(3) td {
+		border-bottom: 3px solid #000;
+	}
+	table tr:nth-child(6) td {
+		border-bottom: 3px solid #000;
+	}
+	table tr td:nth-child(3) {
+		border-right: 3px solid #000;
+	}
+	table tr td:nth-child(6) {
+		border-right: 3px solid #000;
+	}
+	table td {
+		border: 1px solid #000;
+	}
+	table input {
+		display: block;
+		width: 50px;
+		height: 50px;
+		border: 0;
+		outline: 0;
+		text-align: center;
+		font-weight: bold;
+		font-size: 2em;
+	}
+	button {
+		margin-top: 18px;
+		font-size: 1.3em;
+		text-transform: uppercase;
+	}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<header>
+		<h1>Sudoku Checker</h1>
+		<small>Only one digit [1-9] allowed per cell</small>
+	</header>
+	<table id="sudoku">
+		<tbody>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+				<td><input type="text"></td>
+			</tr>
+		</tbody>
+	</table>
+	<button id="check-sudoku">Check</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="sudoku-checker.js"></script>
+<script src="sudoku-game.js"></script>
+</body>
+</html>
