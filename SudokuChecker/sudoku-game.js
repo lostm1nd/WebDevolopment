@@ -40,6 +40,8 @@ $(function() {
 
     if (validCells && isSudokuValid(sudoku)) {
       alert('Congratulations!\nThis is a valid sudoku.');
+    } else if (validCells) {
+      alert('The solution is incorrect.');
     }
   });
 
