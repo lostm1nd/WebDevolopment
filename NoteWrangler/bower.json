@@ -1,0 +1,25 @@
+{
+  "name": "note-wrangler",
+  "description": "codeschool stb on angular",
+  "main": "app.js",
+  "authors": [
+    "Deyan Yanakiev <kliomba@abv.bg>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lostm1nd/WebDevolopment",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-resource": "~1.4.7"
+  }
+}
