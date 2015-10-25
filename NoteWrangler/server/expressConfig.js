@@ -14,4 +14,4 @@ module.exports = function(app, express) {
 
   // parse application/json
   app.use(bodyParser.json());
-}
+};
