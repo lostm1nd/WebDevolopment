@@ -6,8 +6,12 @@
 		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
 	</head>
-	<body>
-		<h1>hello angular</h1>
+	<body ng-app="NoteWrangler">
+		<header>
+			<h1>Note Wrangler</h1>
+		</header>
+
+		<section class="container-fluid" ng-view></section>
 
 		<!-- vendor -->
 		<script src="vendor/jquery/dist/jquery.js"></script>
@@ -16,11 +20,18 @@
 		<script src="vendor/angular-resource/angular-resource.js"></script>
 
 		<!-- app -->
+		<script src="scripts/app.js"></script>
+		<script src="scripts/routes.js"></script>
 
 		<!-- directives -->
 
 		<!-- controllers -->
+		<script src="assets/javascript/controllers/notes-index-controller.js"></script>
+		<script src="assets/javascript/controllers/notes-show-controller.js"></script>
+		<script src="assets/javascript/controllers/notes-edit-controller.js"></script>
+		<script src="assets/javascript/controllers/notes-create-controller.js"></script>
 
 		<!-- services -->
+		<script src="assets/javascript/services/notes.js"></script>
 	</body>
 </html>

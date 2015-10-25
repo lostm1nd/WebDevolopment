@@ -1,0 +1,7 @@
+<h1>notes index page</h1>
+<div class="row">
+	<article class="note col-sm-6" ng-repeat="note in notes">
+		<h2><a ng-href="#/notes/{{note.id}}">{{note.title}}</a></h2>
+		<p>{{note.description}}</p>
+	</article>
+</div>
