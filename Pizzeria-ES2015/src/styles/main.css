@@ -1,0 +1,20 @@
+#wrap {
+  max-width: 860px;
+  margin: 12px auto;
+  padding: 12px;
+  background: #efefef;
+  box-shadow: 0 4px 8px 8px #bbb;
+}
+
+.jumbotron {
+  background: #D6E9C6;
+  text-align: center;
+}
+
+.order-result {
+  margin-top: 18px;
+}
+
+#pizza-alert {
+  visibility: hidden;
+}
