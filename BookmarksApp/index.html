@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bookmarks AngularJS App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
+</head>
+<body ng-app="bookmarks">
+
+  <main ng-view></main>
+
+  <script src="app.js" charset="utf-8"></script>
+  <script src="directives/bookmarks-home/bookmarks-home.js" charset="utf-8"></script>
+  <script src="directives/bookmarks-list/bookmarks-list.js" charset="utf-8"></script>
+  <script src="directives/tags-list/tags-list.js" charset="utf-8"></script>
+  <script src="services/tags-service.js" charset="utf-8"></script>
+</body>
+</html>
