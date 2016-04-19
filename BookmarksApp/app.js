@@ -1,24 +1,4 @@
-angular.module('bookmarks', ['ngRoute'])
-  .value('bookmarksDB', [
-    {
-      id: 1,
-      name: 'jQuery',
-      url: 'http://jquery.com',
-      tags: ['javascript', 'library']
-    },
-    {
-      id: 2,
-      name: 'Underscore',
-      url: 'http://underscore.org',
-      tags: ['javascript', 'library']
-    },
-    {
-      id: 3,
-      name: 'Backbone',
-      url: 'http://backbonejs.org',
-      tags: ['javascript', 'framework']
-    }
-  ])
+angular.module('bookmarks', ['ngRoute', 'ngResource'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/create', {

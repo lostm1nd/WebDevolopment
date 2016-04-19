@@ -1,16 +1,18 @@
-angular.module('bookmarks').directive('bookmarksHome', function (tagsService) {
+angular.module('bookmarks').directive('bookmarksHome', function (restService, tagsService) {
   return {
     templateUrl: 'directives/bookmarks-home/bookmarks-home.html',
-    controller: function ($scope, bookmarksDB) {
-      $scope.bookmarks = bookmarksDB;
-      $scope.tags = tagsService.extract(bookmarksDB);
+    controller: function ($scope) {
+      $scope.bookmarks = restService.query(function success(bookmarks) {
+        $scope.tags = tagsService.extract(bookmarks);
+      });
 
       this.delete = function (bookmark) {
-        var index = bookmarksDB.indexOf(bookmark);
+        $scope.bookmarks.splice($scope.bookmarks.indexOf(bookmark), 1);
+        $scope.tags = tagsService.extract($scope.bookmarks);
 
-        bookmarksDB = bookmarksDB.slice(0, index).concat(bookmarksDB.slice(index + 1));
-        $scope.bookmarks = bookmarksDB;
-        $scope.tags = tagsService.extract(bookmarksDB);
+        restService.remove({
+          id: bookmark._id.$oid
+        });
       };
     }
   };
