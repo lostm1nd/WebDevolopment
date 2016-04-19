@@ -1,6 +1,9 @@
-<h2>Bookmarks</h2>
+<h2>
+  Bookmarks
+  <span ng-if="filter">| filtered by: {{filter}} <button ng-click="clearFilter()">x</button></span>
+</h2>
 <ul>
-  <li ng-repeat="bookmark in bookmarks">
+  <li ng-repeat="bookmark in bookmarks | filter:filter">
     <p>
       {{bookmark.name}} |
       <a href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a> |
@@ -8,7 +11,7 @@
     </p>
     <p>
       <a ng-href="#/edit/{{bookmark._id.$oid}}">Edit</a>
-      <a href="" ng-click="delete(bookmark)">Delete</a>
+      <a href ng-click="delete(bookmark)">Delete</a>
     </p>
   </li>
 </ul>

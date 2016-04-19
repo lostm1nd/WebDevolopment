@@ -1,6 +1,6 @@
 <h2>Tags</h2>
 <ul>
   <li ng-repeat="tag in tags">
-    {{tag.name}} ({{tag.number}})
+    <a href ng-click="filterBy(tag.name)">{{tag.name}}</a> ({{tag.number}})
   </li>
 </ul>
