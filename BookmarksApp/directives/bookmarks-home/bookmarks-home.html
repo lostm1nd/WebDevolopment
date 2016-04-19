@@ -1,32 +1,11 @@
-<style>
-  .bookmarks-home {
-    display: flex;
-    flex-direction: column;
-  }
+<section flex layout="row">
 
-  .bookmarks-home section {
-    display: flex;
-  }
-
-  .bookmarks {
-    flex: 4;
-  }
-
-  .tags {
-    flex: 1;
-  }
-</style>
-
-<section class="bookmarks-home">
-
-  <header>
-    <h1>Bookmarks App</h1>
-    <p><a href="#/create">Create new bookmark</a></p>
-  </header>
-
-  <section>
+  <md-content flex id="content">
     <article bookmarks-list bookmarks="bookmarks" filter="filter" class="bookmarks"></article>
+  </md-content>
+
+  <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
     <aside tags-list tags="tags" class="tags"></aside>
-  </section>
+  </md-sidenav>
 
 </section>

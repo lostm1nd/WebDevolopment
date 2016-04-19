@@ -1,5 +1,5 @@
-angular.module('bookmarks', ['ngRoute', 'ngResource'])
-  .config(['$routeProvider', function($routeProvider) {
+angular.module('bookmarks', ['ngRoute', 'ngResource', 'ngMaterial'])
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/create', {
         template: '<bookmarks-create></bookmarks-create>'
@@ -13,4 +13,7 @@ angular.module('bookmarks', ['ngRoute', 'ngResource'])
       .otherwise({
         redirectTo: '/'
       });
+  }])
+  .config(['$mdThemingProvider', function ($mdThemingProvider) {
+    $mdThemingProvider.theme('dark-blue');
   }]);

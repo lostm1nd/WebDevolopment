@@ -1,38 +1,21 @@
-<style>
-  .bookmarks-create {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .bookmarks-create label {
-    display: flex
-  }
-
-  .bookmarks-create :nth-child(n+2) {
-    margin-top: 0.5rem;
-  }
-
-  .bookmarks-create label span {
-    flex: 1;
-  }
-
-  .bookmarks-create label input {
-    flex: 2;
-  }
-
-  .bookmarks-create button,
-  .bookmarks-create input[type=submit] {
-    max-width: 100px;
-  }
-</style>
-
-<section>
-  <h1>Create a bookmark</h1>
-  <form class="bookmarks-create">
-    <label><span>Bookmark name</span><input type="text" ng-model="bookmark.name" required></label>
-    <label><span>Bookmark url</span><input type="url" ng-model="bookmark.url" required></label>
-    <label><span>Bookmark tags (comma separated)</span><input type="text" ng-model="bookmark.tags" required></label>
-    <input type="submit" value="Create" ng-click="create(bookmark)">
-    <button type="button" ng-click="cancel()">Cancel</button>
+<md-content flex layout="column">
+  <h2>Create new bookmark</h2>
+  <form class="bookmarks-edit" flex layout="column" class="md-inline-form">
+    <md-input-container>
+      <label>Bookmark name</label>
+      <input type="text" ng-model="bookmark.name" required>
+    </md-input-container>
+    <md-input-container>
+      <label>Bookmark url</label>
+      <input type="url" ng-model="bookmark.url" required>
+    </md-input-container>
+    <md-input-container>
+      <label>Bookmark tags (comma separated)</label>
+      <input type="text" ng-model="bookmark.tags" required>
+    </md-input-container>
+    <p flex layout="row">
+      <md-button ng-click="cancel()">Cancel</md-button>
+      <md-button ng-click="create(bookmark)">Create</md-button>
+    </p>
   </form>
-</section>
+</md-content>

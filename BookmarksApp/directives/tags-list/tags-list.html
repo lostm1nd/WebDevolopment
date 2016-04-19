@@ -1,6 +1,8 @@
 <h2>Tags</h2>
-<ul>
-  <li ng-repeat="tag in tags">
-    <a href ng-click="filterBy(tag.name)">{{tag.name}}</a> ({{tag.number}})
-  </li>
-</ul>
+<md-list>
+  <md-list-item ng-repeat="tag in tags">
+    <md-button ng-click="filterBy(tag.name)" class="md-raised md-cornered">
+      {{tag.name}} ({{tag.number}})
+    </md-button>
+  </md-list-item>
+</md-list>

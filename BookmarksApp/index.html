@@ -4,20 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Bookmarks AngularJS App</title>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
   <style media="screen">
-    .bookmarks-app {
-      max-width: 960px;
-      margin: 0 auto;
+    md-input-container label:not(.md-no-float):not(._md-container-ignore) {
+      width: calc(100% - 3px);
     }
   </style>
 </head>
-<body ng-app="bookmarks">
+<body ng-app="bookmarks" ng-cloak>
+
+  <md-toolbar flex layout="row" layout-align="space-between center">
+    <h1>Bookmarks App</h1>
+    <md-button href="#/create" class="md-fab md-mini">+</md-button>
+  </md-toolbar>
 
   <main ng-view class="bookmarks-app"></main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
   <script src="https://code.angularjs.org/1.5.3/angular-resource.js"></script>
+  <script src="https://code.angularjs.org/1.5.3/angular-animate.js"></script>
+  <script src="https://code.angularjs.org/1.5.3/angular-aria.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
   <script src="app.js"></script>
   <script src="directives/bookmarks-home/bookmarks-home.js"></script>

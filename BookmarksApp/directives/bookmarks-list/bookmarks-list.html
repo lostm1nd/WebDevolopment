@@ -1,17 +1,27 @@
 <h2>
   Bookmarks
-  <span ng-if="filter">| filtered by: {{filter}} <button ng-click="clearFilter()">x</button></span>
+  <span ng-if="filter">
+    | filtered by: {{filter}}
+    <md-button ng-click="clearFilter()" class="md-fab md-mini">x</md-button>
+  </span>
 </h2>
-<ul>
-  <li ng-repeat="bookmark in bookmarks | filter:filter">
-    <p>
-      {{bookmark.name}} |
-      <a href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a> |
-      {{bookmark.tags.join(', ')}}
-    </p>
-    <p>
-      <a ng-href="#/edit/{{bookmark._id.$oid}}">Edit</a>
-      <a href ng-click="delete(bookmark)">Delete</a>
-    </p>
-  </li>
-</ul>
+
+<md-card ng-repeat="bookmark in bookmarks | filter:filter">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">
+        {{bookmark.name}}
+      </span>
+      <span class="md-subhead">
+        <a href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a>
+      </span>
+      <span class="md-subhead">
+        {{bookmark.tags.join(', ')}}
+      </span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button ng-click="edit(bookmark)">Edit</md-button>
+    <md-button ng-click="delete(bookmark)">Delete</md-button>
+  </md-card-actions>
+</md-card>
