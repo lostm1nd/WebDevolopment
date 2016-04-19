@@ -9,9 +9,11 @@ angular.module('bookmarks').directive('bookmarksEdit', function ($routeParams, $
       };
 
       $scope.edit = function (bookmark) {
-        restService.update({ id: $routeParams.id }, bookmark);
-
-        $location.path('/');
+        restService.update({
+          id: $routeParams.id
+        }, bookmark).$promise.then(function success() {
+          $location.path('/');
+        });
       };
     }
   };
