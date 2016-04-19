@@ -15,5 +15,5 @@ angular.module('bookmarks', ['ngRoute', 'ngResource', 'ngMaterial'])
       });
   }])
   .config(['$mdThemingProvider', function ($mdThemingProvider) {
-    $mdThemingProvider.theme('dark-blue');
+    $mdThemingProvider.theme('lime').backgroundPalette('lime').dark();
   }]);
