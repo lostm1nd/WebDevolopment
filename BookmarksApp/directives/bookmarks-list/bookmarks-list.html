@@ -7,7 +7,7 @@
       {{bookmark.tags.join(', ')}}
     </p>
     <p>
-      <a href="#/edit/{{bookmark.id}}">Edit</a>
+      <a ng-href="#/edit/{{bookmark._id.$oid}}">Edit</a>
       <a href="" ng-click="delete(bookmark)">Delete</a>
     </p>
   </li>

@@ -4,5 +4,7 @@ angular.module('bookmarks').factory('restService', function ($resource) {
 
   return $resource(dbUrl, {
     apiKey: apiKey
-  }, {});
+  }, {
+    update: { method:'PUT' }
+  });
 });

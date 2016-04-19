@@ -1,0 +1,38 @@
+<style>
+  .bookmarks-edit {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bookmarks-edit label {
+    display: flex
+  }
+
+  .bookmarks-edit :nth-child(n+2) {
+    margin-top: 0.5rem;
+  }
+
+  .bookmarks-edit label span {
+    flex: 1;
+  }
+
+  .bookmarks-edit label input {
+    flex: 2;
+  }
+
+  .bookmarks-edit button,
+  .bookmarks-edit input[type=submit] {
+    max-width: 100px;
+  }
+</style>
+
+<section>
+  <h1>Edit bookmark: "{{bookmark.name}}"</h1>
+  <form class="bookmarks-edit">
+    <label><span>Bookmark name</span><input type="text" ng-model="bookmark.name" required></label>
+    <label><span>Bookmark url</span><input type="url" ng-model="bookmark.url" required></label>
+    <label><span>Bookmark tags (comma separated)</span><input type="text" ng-model="bookmark.tags" required></label>
+    <input type="submit" value="Edit" ng-click="edit(bookmark)">
+    <button type="button" ng-click="cancel()">Cancel</button>
+  </form>
+</section>
