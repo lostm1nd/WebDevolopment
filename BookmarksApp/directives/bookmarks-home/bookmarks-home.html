@@ -1,19 +1,32 @@
 <style>
+  .bookmarks-home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bookmarks-home section {
+    display: flex;
+  }
+
   .bookmarks {
-    width: 75%;
-    display: inline-block;
-    vertical-align: top;
+    flex: 4;
   }
 
   .tags {
-    width: 20%;
-    display: inline-block;
-    margin-left: 4%;
-    vertical-align: top;
+    flex: 1;
   }
 </style>
 
-<section>
-  <article bookmarks-list bookmarks="bookmarks" class="bookmarks"></article>
-  <aside tags-list tags="tags" class="tags"></aside>
+<section class="bookmarks-home">
+
+  <header>
+    <h1>Bookmarks App</h1>
+    <p><a href="#/create">Create new bookmark</a></p>
+  </header>
+
+  <section>
+    <article bookmarks-list bookmarks="bookmarks" class="bookmarks"></article>
+    <aside tags-list tags="tags" class="tags"></aside>
+  </section>
+
 </section>

@@ -1,0 +1,17 @@
+<style>
+  .bookmarks-create {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bookmarks-create input[type=submit] {
+    max-width: 100px;
+  }
+</style>
+
+<form class="bookmarks-create">
+  <label>Bookmark name <input type="text" ng-model="bookmark.name" required></label>
+  <label>Bookmark url <input type="url" ng-model="bookmark.url" required></label>
+  <label>Bookmark tags (comma separated) <input type="text" ng-model="bookmark.tags" required></label>
+  <input type="submit" value="Create" ng-click="create(bookmark)">
+</form>
