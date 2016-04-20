@@ -3,10 +3,17 @@ module.exports = function(config) {
     autoWatch: true,
     frameworks: ['jasmine'],
     browsers: ['PhantomJS'],
-    files: ['src/**/*.spec.js'],
+    files: [
+      'node_modules/angular/angular.js',
+      'node_modules/angular-resource/angular-resource.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'src/**/*.html',
+      'src/**/*.js'
+    ],
     reporters: ['progress', 'coverage'],
     preprocessors: {
-      'src/**/!(*.test).js': ['coverage']
+      'src/**/!(*.spec).js': ['coverage'],
+      'src/**/*.html': ['ng-html2js']
     },
     coverageReporter: {
       type: 'html',

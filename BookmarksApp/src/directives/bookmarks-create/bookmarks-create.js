@@ -1,4 +1,6 @@
-angular.module('bookmarks').directive('bookmarksCreate', function (restService) {
+angular.module('bookmarks-create', [
+  'rest-service'
+]).directive('bookmarksCreate', function (restService) {
   return {
     templateUrl: 'directives/bookmarks-create/bookmarks-create.html',
     controller: function ($scope, $location) {
