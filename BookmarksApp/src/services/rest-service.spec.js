@@ -7,8 +7,8 @@ describe('Rest service', function() {
     $httpBackend = $injector.get('$httpBackend');
   }));
 
-  it('should define an update', function () {
-    expect(restService.update).toBeDefined();
+  it('should define an update function', function () {
+    expect(restService.update).toEqual(jasmine.any(Function));
   });
 
   it('should send a PUT request on update', function () {

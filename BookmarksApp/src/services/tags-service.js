@@ -1,4 +1,4 @@
-angular.module('bookmarks').factory('tagsService', function () {
+angular.module('tags-service', []).factory('tagsService', function () {
   return {
     extract: function (array) {
       return array.reduce(function (acc, bookmark) {
