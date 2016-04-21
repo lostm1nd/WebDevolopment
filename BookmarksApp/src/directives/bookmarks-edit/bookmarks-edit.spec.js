@@ -1,11 +1,12 @@
 describe('Bookmarks edit', function () {
-  var bookmark = {
-    name: 'mock',
-    url: 'www.mock.com',
-    tags: ['mock', 'me']
-  };
-
+  var bookmark;
   beforeEach(module('bookmarks-edit', function ($provide) {
+    bookmark = {
+      name: 'mock',
+      url: 'www.mock.com',
+      tags: ['mock', 'me']
+    };
+
     $provide.factory('restService', function () {
       return {
         get: function () { return bookmark; }

@@ -4,6 +4,7 @@ angular.module('bookmarks-home', [
 ]).directive('bookmarksHome', function (restService, tagsService) {
   return {
     templateUrl: 'directives/bookmarks-home/bookmarks-home.html',
+    controllerAs: 'BookmarksHomeCtrl',
     controller: function ($scope) {
       $scope.bookmarks = restService.query(function success(bookmarks) {
         $scope.tags = tagsService.extract(bookmarks);
