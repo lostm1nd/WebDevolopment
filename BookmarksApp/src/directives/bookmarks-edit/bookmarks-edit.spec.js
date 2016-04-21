@@ -7,9 +7,10 @@ describe('Bookmarks edit', function () {
       tags: ['mock', 'me']
     };
 
-    $provide.factory('restService', function () {
+    $provide.factory('restService', function ($q) {
       return {
-        get: function () { return bookmark; }
+        get: function () { return bookmark; },
+        update: function () { return { $promise: $q.resolve() }; }
       };
     });
   }));
@@ -47,5 +48,11 @@ describe('Bookmarks edit', function () {
     ).triggerHandler('click');
 
     expect(spy.calls.count()).toEqual(1);
+  });
+
+  it('should call update on scope.edit', function () {
+    spyOn(scope, 'edit');
+    scope.edit();
+    expect(scope.edit).toHaveBeenCalledTimes(1);
   });
 });
