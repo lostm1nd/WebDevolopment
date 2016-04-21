@@ -1,4 +1,7 @@
-angular.module('bookmarks').directive('bookmarksEdit', function ($routeParams, $location, restService) {
+angular.module('bookmarks-edit', [
+  'ngRoute',
+  'rest-service'
+]).directive('bookmarksEdit', function ($routeParams, $location, restService) {
   return {
     templateUrl: 'directives/bookmarks-edit/bookmarks-edit.html',
     controller: function ($scope) {

@@ -3,7 +3,8 @@ angular.module('bookmarks', [
   'ngResource',
   'ngMaterial',
   'bookmarks-home',
-  'bookmarks-create'
+  'bookmarks-create',
+  'bookmarks-edit'
 ])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider

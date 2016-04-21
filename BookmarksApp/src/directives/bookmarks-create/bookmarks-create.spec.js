@@ -1,4 +1,4 @@
-describe('Bookmarks create', function() {
+describe('Bookmarks create', function () {
   beforeEach(module('bookmarks-create'));
   beforeEach(module('directives/bookmarks-create/bookmarks-create.html'));
 

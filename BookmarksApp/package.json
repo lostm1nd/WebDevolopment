@@ -10,6 +10,7 @@
     "angular": "1.5.5",
     "angular-mocks": "1.5.5",
     "angular-resource": "1.5.5",
+    "angular-route": "1.5.5",
     "jasmine": "2.4.1",
     "karma": "0.13.22",
     "karma-coverage": "0.5.5",
