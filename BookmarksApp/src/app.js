@@ -1,6 +1,8 @@
 angular.module('bookmarks', [
   'ngRoute',
   'ngResource',
+  'ngMaterial',
+  'bookmarks-home',
   'bookmarks-create'
 ])
 .config(['$routeProvider', function($routeProvider) {

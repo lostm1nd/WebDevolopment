@@ -1,4 +1,7 @@
-angular.module('bookmarks').directive('bookmarksHome', function (restService, tagsService) {
+angular.module('bookmarks-home', [
+  'rest-service',
+  'tags-service'
+]).directive('bookmarksHome', function (restService, tagsService) {
   return {
     templateUrl: 'directives/bookmarks-home/bookmarks-home.html',
     controller: function ($scope) {

@@ -10,10 +10,20 @@ module.exports = function(config) {
       'src/**/*.html',
       'src/**/*.js'
     ],
-    reporters: ['progress', 'coverage'],
+    reporters: ['spec', 'coverage'],
+    specReporter: {
+      suppressErrorSummary: true,
+      suppressFailed: false,
+      suppressPassed: false,
+      suppressSkipped: false,
+      showSpecTiming: true
+      },
     preprocessors: {
       'src/**/!(*.spec).js': ['coverage'],
       'src/**/*.html': ['ng-html2js']
+    },
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'src/'
     },
     coverageReporter: {
       type: 'html',
