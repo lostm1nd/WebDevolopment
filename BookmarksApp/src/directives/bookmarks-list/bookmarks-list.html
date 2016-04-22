@@ -2,7 +2,7 @@
   Bookmarks
   <span ng-if="filter">
     | filtered by: {{filter}}
-    <md-button ng-click="clearFilter()" class="md-fab md-mini">x</md-button>
+    <md-button class="clear-filter" ng-click="clearFilter()" class="md-fab md-mini">x</md-button>
   </span>
 </h2>
 
@@ -22,6 +22,6 @@
   </md-card-title>
   <md-card-actions layout="row" layout-align="end center">
     <md-button href="#/edit/{{bookmark._id.$oid}}">Edit</md-button>
-    <md-button ng-click="delete(bookmark)">Delete</md-button>
+    <md-button class="delete-bookmark" ng-click="delete(bookmark)">Delete</md-button>
   </md-card-actions>
 </md-card>

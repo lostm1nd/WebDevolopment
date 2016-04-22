@@ -3,6 +3,7 @@ angular.module('bookmarks', [
   'ngResource',
   'ngMaterial',
   'bookmarks-home',
+  'bookmarks-list',
   'bookmarks-create',
   'bookmarks-edit'
 ])

@@ -1,4 +1,4 @@
-angular.module('bookmarks').directive('bookmarksList', function ($location) {
+angular.module('bookmarks-list', []).directive('bookmarksList', function ($location) {
   return {
     require: '^^bookmarksHome',
     templateUrl: 'directives/bookmarks-list/bookmarks-list.html',
