@@ -1,11 +1,9 @@
 describe('Bookmarks list', function () {
-  beforeEach(module('bookmarks-home'));
-  beforeEach(module('directives/bookmarks-home/bookmarks-home.html'));
   beforeEach(module('bookmarks-list'));
   beforeEach(module('directives/bookmarks-list/bookmarks-list.html'));
 
   var spies, element, scope;
-  beforeEach(inject(function ($rootScope, $compile, $httpBackend) {
+  beforeEach(inject(function ($rootScope, $compile) {
     scope = $rootScope.$new();
     scope.filter = 'me';
     scope.bookmarks = [{

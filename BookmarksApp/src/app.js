@@ -4,6 +4,7 @@ angular.module('bookmarks', [
   'ngMaterial',
   'bookmarks-home',
   'bookmarks-list',
+  'tags-list',
   'bookmarks-create',
   'bookmarks-edit'
 ])

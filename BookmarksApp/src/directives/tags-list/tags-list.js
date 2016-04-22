@@ -1,4 +1,4 @@
-angular.module('bookmarks').directive('tagsList', function () {
+angular.module('tags-list', []).directive('tagsList', function () {
   return {
     require: '^^bookmarksHome',
     templateUrl: 'directives/tags-list/tags-list.html',
