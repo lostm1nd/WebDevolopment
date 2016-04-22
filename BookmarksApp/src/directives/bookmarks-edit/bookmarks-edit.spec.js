@@ -1,5 +1,5 @@
 describe('Bookmarks edit', function () {
-  var bookmark;
+  var bookmark, updateSpy;
   beforeEach(module('bookmarks-edit', function ($provide) {
     bookmark = {
       name: 'mock',
@@ -7,18 +7,23 @@ describe('Bookmarks edit', function () {
       tags: ['mock', 'me']
     };
 
+    updateSpy = jasmine.createSpy();
+
     $provide.factory('restService', function ($q) {
       return {
         get: function () { return bookmark; },
-        update: function () { return { $promise: $q.resolve() }; }
+        update: function () { updateSpy(); return { $promise: $q.resolve() }; }
       };
     });
   }));
 
   beforeEach(module('directives/bookmarks-edit/bookmarks-edit.html'));
 
-  var element, scope;
-  beforeEach(inject(function ($rootScope, $compile) {
+  var element, scope, locationPathSpy;
+  beforeEach(inject(function ($rootScope, $compile, $location) {
+    locationPathSpy = jasmine.createSpy();
+    $location.path = locationPathSpy;
+
     scope = $rootScope.$new();
 
     element = angular.element('<bookmarks-edit></bookmarks-edit>');
@@ -50,9 +55,15 @@ describe('Bookmarks edit', function () {
     expect(spy.calls.count()).toEqual(1);
   });
 
-  it('should call update on scope.edit', function () {
-    spyOn(scope, 'edit');
+  it('should call restService.update on scope.edit', function () {
     scope.edit();
-    expect(scope.edit).toHaveBeenCalledTimes(1);
+    expect(updateSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should redirect to root on success in scope.edit', function () {
+    scope.edit();
+    scope.$digest();
+
+    expect(locationPathSpy).toHaveBeenCalledWith('/');
   });
 });
