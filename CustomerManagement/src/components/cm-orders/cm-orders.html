@@ -1,0 +1,21 @@
+<section ng-repeat="cust in customers">
+  <h2>{{cust.fname}} {{cust.lname}}</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="order in cust.orders">
+        <td>{{order.name}}</td>
+        <td>{{order.qty}}</td>
+        <td>{{order.price}}</td>
+        <td>{{order.qty * order.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

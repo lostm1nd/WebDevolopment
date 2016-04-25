@@ -1,7 +1,8 @@
 angular.module('custManagement').component('cmHome', {
   templateUrl: 'components/cm-home/cm-home.html',
   $routeConfig: [
-    { path: '/customers', name: 'Customers', component: 'cmCustomers', useAsDefault: true },
+    { path: '/', name: 'Default', component: 'cmCustomers', useAsDefault: true },
+    { path: '/customers/', name: 'Customers', component: 'cmCustomers' },
     { path: '/orders', name: 'Orders', component: 'cmOrders' }
   ]
 });
