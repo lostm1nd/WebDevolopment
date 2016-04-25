@@ -7,6 +7,7 @@ angular.module('custManagement', [
 .value('$routerRootComponent', 'cmHome')
 .constant('customersDB', [
   {
+    id: 1111,
     fname: 'Victor',
     lname: 'Bryan',
     city: 'Seattle',
@@ -16,6 +17,7 @@ angular.module('custManagement', [
     ]
   },
   {
+    id: 1112,
     fname: 'Lee',
     lname: 'Carroll',
     city: 'Phoenix',
@@ -26,6 +28,7 @@ angular.module('custManagement', [
     ]
   },
   {
+    id: 1113,
     fname: 'Erick',
     lname: 'Pittman',
     city: 'Chicago',

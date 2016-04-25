@@ -1,5 +1,6 @@
 <section ng-repeat="cust in customers">
-  <h2>{{cust.fname}} {{cust.lname}}</h2>
+  <h2><a ng-href="/customers/{{cust.id}}">{{cust.fname}} {{cust.lname}}</a></h2>
   <p>{{cust.city}}</p>
   <p>{{cust.orders.length}}</p>
 </section>
+<ng-outlet></ng-outlet>
