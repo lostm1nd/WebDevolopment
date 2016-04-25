@@ -1,6 +1,27 @@
-<section ng-repeat="cust in customers">
-  <h2><a ng-href="/customers/{{cust.id}}">{{cust.fname}} {{cust.lname}}</a></h2>
-  <p>{{cust.city}}</p>
-  <p>{{cust.orders.length}}</p>
+<section class="section">
+  <div class="container">
+    <form class="columns">
+      <p class="column"><input type="text" placeholder="First name" class="input"></p>
+      <p class="column"><input type="text" placeholder="Last name" class="input"></p>
+      <p class="column"><input type="text" placeholder="City" class="input"></p>
+      <p class="column"><input type="submit" value="Add customer" class="button is-primary"></p>
+    </form>
+  </div>
 </section>
-<ng-outlet></ng-outlet>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third" ng-repeat="cust in customers">
+        <div class="panel">
+          <h2 class="panel-heading">
+            <a ng-href="/customers/{{cust.id}}">{{cust.fname}} {{cust.lname}}</a>
+          </h2>
+          <div class="panel-block">
+            <p>{{cust.city}}</p>
+            <p>{{cust.orders.length}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
