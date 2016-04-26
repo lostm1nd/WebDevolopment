@@ -1,10 +1,18 @@
 <section class="section">
   <div class="container">
-    <form class="columns">
-      <p class="column"><input type="text" placeholder="First name" class="input"></p>
-      <p class="column"><input type="text" placeholder="Last name" class="input"></p>
-      <p class="column"><input type="text" placeholder="City" class="input"></p>
-      <p class="column no-flex-grow"><input type="submit" value="Add customer" class="button is-primary"></p>
+    <form class="columns" ng-submit="add(customer)">
+      <p class="column">
+        <input ng-model="customer.fname" type="text" placeholder="First name" class="input" required>
+      </p>
+      <p class="column">
+        <input ng-model="customer.lname" type="text" placeholder="Last name" class="input" required>
+      </p>
+      <p class="column">
+        <input ng-model="customer.city" type="text" placeholder="City" class="input" required>
+      </p>
+      <p class="column no-flex-grow">
+        <input type="submit" value="Add customer" class="button is-primary">
+      </p>
     </form>
   </div>
 </section>
