@@ -14,8 +14,12 @@
         <tr ng-repeat="order in cust.orders">
           <td>{{order.name}}</td>
           <td>{{order.qty}}</td>
-          <td>{{order.price}}</td>
-          <td>{{order.qty * order.price}}</td>
+          <td>{{order.price | currency:"$":2}}</td>
+          <td>{{order.qty * order.price | currency:"$":2}}</td>
+        </tr>
+        <tr>
+          <td colspan="3">Total</td>
+          <td>{{calculateCustomerTotal(cust) | currency:"$":2}}</td>
         </tr>
       </tbody>
     </table>
