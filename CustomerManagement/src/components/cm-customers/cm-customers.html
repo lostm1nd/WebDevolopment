@@ -3,15 +3,15 @@
 <section class="section">
   <div class="container">
     <div class="columns is-multiline">
-      <div class="column is-one-third" ng-repeat="cust in customers">
+      <div class="column is-one-third" ng-repeat="customer in customers">
         <div class="panel">
           <h2 class="panel-heading">
-            <a ng-href="/customers/{{cust.id}}">{{cust.fname}} {{cust.lname}}</a>
-            <button class="delete is-pulled-right"></button>
+            <a ng-href="/customers/{{customer.id}}">{{customer.fname}} {{customer.lname}}</a>
+            <button class="delete is-pulled-right" ng-click="delete(customer)"></button>
           </h2>
           <div class="panel-block">
-            <p>{{cust.city}}</p>
-            <p>{{cust.orders.length}}</p>
+            <p>{{customer.city}}</p>
+            <p>{{customer.orders.length}} order(s)</p>
           </div>
         </div>
       </div>
