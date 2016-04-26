@@ -1,4 +1,5 @@
 angular.module('custManagement', [
+  'ngResource',
   'ngComponentRouter'
 ])
 .config(function($locationProvider) {
