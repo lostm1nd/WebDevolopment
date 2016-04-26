@@ -1,6 +1,6 @@
-<section ng-repeat="cust in customers" class="section">
+<section ng-repeat="customer in customers" class="section">
   <div class="container">
-    <h2 class="subtitle">{{cust.fname}} {{cust.lname}}</h2>
+    <h2 class="subtitle">{{customer.fname}} {{customer.lname}}</h2>
     <table class="table is-bordered is-narrow">
       <thead>
         <tr>
@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="order in cust.orders">
+        <tr ng-repeat="order in customer.orders">
           <td>{{order.name}}</td>
           <td>{{order.qty}}</td>
           <td>{{order.price | currency:"$":2}}</td>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <td colspan="3">Total</td>
-          <td>{{calculateCustomerTotal(cust) | currency:"$":2}}</td>
+          <td>{{customer.orders | orderTotal | currency:"$":2}}</td>
         </tr>
       </tbody>
     </table>

@@ -1,3 +1,28 @@
-<section>
-  Super detailed!
+<section class="section">
+  <div class="container">
+    <h2 class="title">{{customer.fname}} {{customer.lname}}</h2>
+    <p class="subtitle">{{customer.city}}</p>
+    <table class="table is-bordered is-narrow">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="order in customer.orders">
+          <td>{{order.name}}</td>
+          <td>{{order.qty}}</td>
+          <td>{{order.price | currency:"$":2}}</td>
+          <td>{{order.qty * order.price | currency:"$":2}}</td>
+        </tr>
+        <tr>
+          <td colspan="3">Total</td>
+          <td>{{customer.orders | orderTotal | currency:"$":2}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
