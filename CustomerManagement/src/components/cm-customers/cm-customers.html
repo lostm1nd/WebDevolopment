@@ -1,4 +1,4 @@
-<cm-customer-add></cm-customer-add>
+<cm-customer-add add-customer="addCustomer(customer)"></cm-customer-add>
 
 <section class="section">
   <div class="container">
@@ -6,7 +6,7 @@
       <div class="column is-one-third" ng-repeat="customer in customers">
         <div class="panel">
           <h2 class="panel-heading">
-            <a ng-href="/customers/{{customer.id}}">{{customer.fname}} {{customer.lname}}</a>
+            <a ng-href="/customers/{{customer._id.$oid}}">{{customer.fname}} {{customer.lname}}</a>
             <button class="delete is-pulled-right" ng-click="delete(customer)"></button>
           </h2>
           <div class="panel-block">

@@ -3,13 +3,15 @@ angular.module('custManagement').component('cmCustomers', {
   controller: function ($scope, databaseService) {
     $scope.customers = databaseService.query();
 
-    $scope.delete = function (customer) {
-      var id = customer.id;
+    $scope.addCustomer = function (customer) {
+      $scope.customers.push(customer);
+    };
 
-      customersDB = customersDB.filter(function (cust) {
-        return cust.id !== id;
+    $scope.delete = function (customer) {
+      customer.$remove();
+      $scope.customers = $scope.customers.filter(function (cust) {
+        return cust._id.$oid !== customer._id.$oid;
       });
-      $scope.customers = customersDB;
     };
   }
 });
