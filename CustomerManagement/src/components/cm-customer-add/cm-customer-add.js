@@ -1,20 +1,21 @@
 angular.module('custManagement').component('cmCustomerAdd', {
   templateUrl: 'components/cm-customer-add/cm-customer-add.html',
   bindings: {
-    addCustomer: '&'
+    save: '&'
   },
-  controller: function ($scope, databaseService) {
-    var ctrl = this;
+  controller: function ($scope, $q) {
     $scope.customer = {};
 
-    $scope.add = function (customer) {
+    this.add = function (customer) {
       customer.orders = [];
 
-      databaseService.save(customer, function (saved) {
-        ctrl.addCustomer({customer: saved});
+      $q.when(
+        this.save({customer: customer})
+      ).then(function success(saved) {
+        $scope.customer = {};
+      }, function error(err) {
+        console.error(err);
       });
-
-      $scope.customer = {};
     };
   }
 });

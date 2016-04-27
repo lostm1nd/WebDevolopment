@@ -1,4 +1,4 @@
-<cm-customer-add add-customer="addCustomer(customer)"></cm-customer-add>
+<cm-customer-add save="$ctrl.add(customer)"></cm-customer-add>
 
 <section class="section">
   <div class="container">
@@ -7,7 +7,7 @@
         <div class="panel">
           <h2 class="panel-heading">
             <a ng-href="/customers/{{customer._id.$oid}}">{{customer.fname}} {{customer.lname}}</a>
-            <button class="delete is-pulled-right" ng-click="delete(customer)"></button>
+            <button class="delete is-pulled-right" ng-click="$ctrl.delete(customer)"></button>
           </h2>
           <div class="panel-block">
             <p>{{customer.city}}</p>

@@ -3,14 +3,17 @@ angular.module('custManagement').component('cmCustomers', {
   controller: function ($scope, databaseService) {
     $scope.customers = databaseService.query();
 
-    $scope.addCustomer = function (customer) {
-      $scope.customers.push(customer);
+    this.add = function (customer) {
+      return databaseService.save(customer, function success(saved) {
+        $scope.customers.push(saved);
+      });
     };
 
-    $scope.delete = function (customer) {
-      customer.$remove();
-      $scope.customers = $scope.customers.filter(function (cust) {
-        return cust._id.$oid !== customer._id.$oid;
+    this.delete = function (customer) {
+      customer.$remove(null, function success(deleted) {
+        $scope.customers = $scope.customers.filter(function (cust) {
+          return cust._id.$oid !== deleted._id.$oid;
+        });
       });
     };
   }
