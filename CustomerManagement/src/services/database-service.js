@@ -8,8 +8,8 @@ angular.module('custManagement').factory('databaseService', function ($resource)
     update: { method: 'PUT' }
   });
 
-  resource.prototype.$remove = function () {
-    return resource.remove({id: this._id.$oid});
+  resource.prototype.$remove = function (onSuccess, onError) {
+    return resource.remove({id: this._id.$oid}, onSuccess, onError);
   };
 
   return resource;
