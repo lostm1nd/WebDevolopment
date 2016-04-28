@@ -3,8 +3,7 @@ angular.module('custManagement').component('cmCustomerDetails', {
   controller: function ($scope, databaseService) {
     this.$routerOnActivate = function (next) {
       var id = next.params.id ;
-
-      $scope.customer = databaseService.get({id: id});
+      $scope.customer = databaseService.get({collection: 'customers', id: id});
     };
   }
 });
