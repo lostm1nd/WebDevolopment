@@ -1,14 +1,22 @@
 <section class="section">
   <div class="container">
-    <form class="columns">
+    <form class="columns" ng-submit="$ctrl.add(selectedProduct)">
       <p class="column">
-        <select class="select input">
-          <option selected>Choose category</option>
+        <select class="select input" required
+                ng-model="selectedCategory"
+                ng-change="$ctrl.onCategoryChange(selectedCategory)">
+          <option value="">Choose category</option>
+          <option ng-repeat="category in categories" value="{{category}}">
+            {{category}}
+          </option>
         </select>
       </p>
       <p class="column">
-        <select class="select input">
-          <option selected>Choose product</option>
+        <select class="select input" ng-model="selectedProduct" required>
+          <option value="">Choose product</option>
+          <option ng-repeat="product in productsInCategory" value="{{product.name}}">
+            {{product.name}}
+          </option>
         </select>
       </p>
       <p class="column no-flex-grow">

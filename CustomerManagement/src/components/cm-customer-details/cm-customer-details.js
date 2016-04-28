@@ -5,5 +5,19 @@ angular.module('custManagement').component('cmCustomerDetails', {
       var id = next.params.id ;
       $scope.customer = databaseService.get({collection: 'customers', id: id});
     };
+
+    this.addOrder = function (order) {
+      $scope.customer.orders.push(order);
+
+      return databaseService.update({
+        collection: 'customers',
+        id: $scope.customer._id.$oid
+      }, $scope.customer, function success(updated) {
+        $scope.customer = updated;
+      }, function error(err) {
+        $scope.customer.orders.pop();
+        console.error(err);
+      });
+    };
   }
 });
