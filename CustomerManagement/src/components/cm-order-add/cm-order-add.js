@@ -1,23 +1,23 @@
 angular.module('custManagement').component('cmOrderAdd', {
   templateUrl: 'components/cm-order-add/cm-order-add.html',
   bindings: {
-    order: '&'
+    order: '&',
+    products: '<'
   },
-  controller: function ($scope, databaseService) {
+  controller: function ($scope) {
     $scope.selectedCategory = '';
     $scope.selectedProduct = '';
-    $scope.categories = [];
     $scope.productsInCategory = [];
 
-    $scope.products = databaseService.query({collection: 'products'}, function success(products) {
-      $scope.categories = Object.keys(products.reduce(function (acc, product) {
+    this.$onChanges = function (changes) {
+      $scope.categories = Object.keys(changes.products.currentValue.reduce(function (acc, product) {
         acc[product.category] = 0;
         return acc;
       }, {}));
-    });
+    };
 
     this.add = function (productName) {
-      var order = $scope.products.filter(function (product) {
+      var order = this.products.filter(function (product) {
         return product.name === productName;
       }).reduce(function (acc, product) {
         return {
@@ -34,7 +34,7 @@ angular.module('custManagement').component('cmOrderAdd', {
       $scope.selectedCategory = category;
       $scope.selectedProduct = '';
 
-      $scope.productsInCategory = $scope.products.filter(function (product) {
+      $scope.productsInCategory = this.products.filter(function (product) {
         return product.category === category;
       });
     };
