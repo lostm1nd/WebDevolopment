@@ -1,7 +1,7 @@
 angular.module('custManagement').filter('orderTotal', function () {
   return function (orders) {
-    if (!orders) {
-      return;
+    if (!Array.isArray(orders)) {
+      return orders;
     }
 
     return orders.reduce(function (acc, order) {
