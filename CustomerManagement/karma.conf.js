@@ -20,7 +20,7 @@ module.exports = function(config) {
       showSpecTiming: true
     },
     preprocessors: {
-      'src/**/!(*.spec).js': ['coverage']
+      'src/!(vendor)/**/!(*.spec).js': ['coverage']
     },
     coverageReporter: {
       type: 'html',
